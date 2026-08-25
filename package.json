@@ -1,0 +1,18 @@
+{
+  "name": "myshows-scrobbler-api",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "better-sqlite3": "13.0.3",
+    "docus": "5.12.3",
+    "nuxt": "4.5.2"
+  }
+}

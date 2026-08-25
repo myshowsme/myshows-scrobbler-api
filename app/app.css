@@ -1,0 +1,23 @@
+/*
+ * Оформление оставлено дефолтным для Docus. Из фирменного стиля MyShows берём
+ * только основной цвет — #c00, он подключается как палитра `myshows`
+ * и назначается в app.config.ts на роль primary.
+ *
+ * `static` обязателен: без него Tailwind вырезает оттенки, на которые нет прямой
+ * ссылки в CSS, а Nuxt UI берёт 500 для светлой темы и 400 для тёмной через var()
+ * — и остаётся ни с чем, из-за чего акцентные элементы становятся невидимыми.
+ */
+
+@theme static {
+  --color-myshows-50: #fff1f1;
+  --color-myshows-100: #ffdfdf;
+  --color-myshows-200: #ffc5c5;
+  --color-myshows-300: #ff9b9b;
+  --color-myshows-400: #f96a6a;
+  --color-myshows-500: #cc0000;
+  --color-myshows-600: #b80000;
+  --color-myshows-700: #990000;
+  --color-myshows-800: #7d0505;
+  --color-myshows-900: #680b0b;
+  --color-myshows-950: #380000;
+}
