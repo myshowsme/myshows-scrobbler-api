@@ -46,5 +46,3 @@ app/
 Базовый путь `/myshows-scrobbler-api/` не зашит в конфиг — он приходит из
 `NUXT_APP_BASE_URL`, который workflow берёт у `actions/configure-pages`. Поэтому
 локально сайт открывается в корне, а на Pages — в подпапке, без правок кода.
-
-Перед первым деплоем в **Settings → Pages** нужно выбрать **Source: GitHub Actions**.
