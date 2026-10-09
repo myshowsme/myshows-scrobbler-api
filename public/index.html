@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MyShows Scrobble API</title>
+  <!--
+    У каждого языка свой префикс, а корень @nuxtjs/i18n при генерации не пререндерит.
+    Выбираем язык так же, как сам i18n: сначала сохранённый в cookie, затем первый
+    подходящий из языков браузера, иначе русский. Пути относительные, поэтому
+    работают и в корне, и в подпапке GitHub Pages.
+  -->
+  <script>
+    (function () {
+      var supported = ['ru', 'en']
+      var saved = document.cookie.match(/(?:^|; )i18n_redirected=([^;]*)/)
+      var preferred = (saved ? [decodeURIComponent(saved[1])] : [])
+        .concat(navigator.languages || [navigator.language || ''])
+        .map(function (lang) { return lang.toLowerCase().split('-')[0] })
+      var lang = preferred.filter(function (code) { return supported.indexOf(code) !== -1 })[0] || 'ru'
+      location.replace(lang)
+    })()
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=ru"></noscript>
+</head>
+</html>

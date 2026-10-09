@@ -21,7 +21,7 @@ Scrobble API
   ---
   color: primary
   size: xl
-  to: /start/quickstart
+  to: /ru/start/quickstart
   trailing-icon: i-lucide-arrow-right
   ---
   Быстрый старт
@@ -69,7 +69,7 @@ API рассчитан на сторонних разработчиков: пл�
   :::u-page-feature
   ---
   icon: i-lucide-play
-  to: /scrobbling/lifecycle
+  to: /ru/scrobbling/lifecycle
   ---
   #title
   `POST /start`
@@ -81,7 +81,7 @@ API рассчитан на сторонних разработчиков: пл�
   :::u-page-feature
   ---
   icon: i-lucide-pause
-  to: /scrobbling/lifecycle
+  to: /ru/scrobbling/lifecycle
   ---
   #title
   `POST /pause`
@@ -93,7 +93,7 @@ API рассчитан на сторонних разработчиков: пл�
   :::u-page-feature
   ---
   icon: i-lucide-check
-  to: /scrobbling/lifecycle
+  to: /ru/scrobbling/lifecycle
   ---
   #title
   `POST /stop`
@@ -114,7 +114,7 @@ class: pt-0
   :::u-page-feature
   ---
   icon: i-lucide-git-merge
-  to: /rules/trakt-simkl
+  to: /ru/rules/trakt-simkl
   ---
   #title
   Совместимость с Trakt и Simkl
@@ -126,7 +126,7 @@ class: pt-0
   :::u-page-feature
   ---
   icon: i-lucide-fingerprint
-  to: /scrobbling/ids
+  to: /ru/scrobbling/ids
   ---
   #title
   19 видов идентификаторов
@@ -138,7 +138,7 @@ class: pt-0
   :::u-page-feature
   ---
   icon: i-lucide-tv
-  to: /scrobbling/anime
+  to: /ru/scrobbling/anime
   ---
   #title
   Аниме и абсолютная нумерация
@@ -150,7 +150,7 @@ class: pt-0
   :::u-page-feature
   ---
   icon: i-lucide-audio-lines
-  to: /scrobbling/metadata
+  to: /ru/scrobbling/metadata
   ---
   #title
   Метаданные качества
