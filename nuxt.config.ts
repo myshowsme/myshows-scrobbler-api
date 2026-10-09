@@ -72,6 +72,14 @@ export default defineNuxtConfig({
     enabled: false,
   },
 
+  // Поисковики читают robots.txt только из корня домена (myshowsme.github.io/robots.txt),
+  // а файл в подпапке игнорируют — поэтому @nuxtjs/robots при непустом baseURL
+  // отказывается его генерировать и пишет ошибку в лог сборки. Отключаем только файл:
+  // мета-тег robots на страницах модуль ставит по-прежнему.
+  robots: {
+    robotsTxt: false,
+  },
+
   // Nitro не добавляет baseURL к адресу редиректа, поэтому он прописан вручную.
   routeRules: Object.fromEntries(
     legacyPaths.map(path => [path, { redirect: `${baseURL}ru${path}` }]),
