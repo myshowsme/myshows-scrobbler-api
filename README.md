@@ -46,3 +46,18 @@ app/
 Базовый путь `/myshows-scrobbler-api/` не зашит в конфиг — он приходит из
 `NUXT_APP_BASE_URL`, который workflow берёт у `actions/configure-pages`. Поэтому
 локально сайт открывается в корне, а на Pages — в подпапке, без правок кода.
+
+## Обновление зависимостей
+
+- **Docus держим на 5.13.x.** В 5.14.0 появился `nuxt-agent-discovery`, который
+  падает на сборке, если у `site.url` есть путь, — а на Pages он есть
+  (`/myshows-scrobbler-api`). Обходы через `agentDiscovery.siteUrl` ломают canonical
+  и ссылки в `llms.txt`. Обновляться, когда модуль научится работать с подпапкой
+  или сайт переедет в корень своего домена.
+- **`mdast-util-to-markdown` закреплён на 2.1.2** через `overrides` в
+  `pnpm-workspace.yaml` — с 2.1.3 вместе с remark-mdc генерация `/llms-full.txt`
+  уходит в бесконечную рекурсию. Там же ссылки на issues, после закрытия которых
+  override можно убрать.
+- **Версия pnpm записана в `pnpm-lock.yaml`** (так делает pnpm 12). После смены
+  `packageManager` в `package.json` нужно прогнать `pnpm install` и закоммитить
+  lockfile, иначе `--frozen-lockfile` в CI упадёт.

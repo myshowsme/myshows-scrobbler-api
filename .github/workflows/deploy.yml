@@ -20,21 +20,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Версию берёт из поля packageManager в package.json.
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
 
       - name: Configure Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Build static site
         run: pnpm run generate
@@ -45,9 +45,11 @@ jobs:
           # Нужен для абсолютных URL в sitemap.xml и canonical.
           NUXT_SITE_URL: ${{ steps.pages.outputs.base_url }}
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: .output/public
+          # С v4 скрытые файлы в артефакт не попадают, а .nojekyll из public/ — скрытый.
+          include-hidden-files: true
 
   deploy:
     needs: build
@@ -57,4 +59,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

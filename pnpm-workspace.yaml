@@ -2,3 +2,9 @@ allowBuilds:
   better-sqlite3: true
   esbuild: true
   vue-demi: true
+
+overrides:
+  # С 2.1.3 обработчик strong/emphasis рекурсивно вызывает сам себя, если его обернуть,
+  # а remark-mdc оборачивает. /llms-full.txt при сборке падает с 500 (Maximum call stack).
+  # Снять, когда закроют nuxt-content/remark-mdc#161 и syntax-tree/mdast-util-to-markdown#87.
+  mdast-util-to-markdown: 2.1.2
